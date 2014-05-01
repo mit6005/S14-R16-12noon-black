@@ -56,7 +56,6 @@ public class Pitch {
     /**
      * Number of pitches in an octave.
      */
-    //FIXED THE ISSUE YAY
     public static final int OCTAVE = 12;
     
     /**
