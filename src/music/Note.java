@@ -1,18 +1,18 @@
 package music;
 
 /**
- * Note represents a note played by an instrument. 
+ * Note represents a note played by an instrument.
  */
 public class Note implements Music {
     private final double duration;
     private final Pitch pitch;
     private final Instrument instrument;
-    
+
     private void checkRep() {
         assert duration >= 0;
         assert instrument != null;
     }
-    
+
     /**
      * Make a Note.
      * Requires duration >= 0, pitch != null, instrument != null
@@ -24,7 +24,7 @@ public class Note implements Music {
         this.instrument = instrument;
         checkRep();
     }
-    
+
     /**
      * @return duration of this note
      */
@@ -45,7 +45,7 @@ public class Note implements Music {
     public Instrument instrument() {
         return instrument;
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -79,12 +79,5 @@ public class Note implements Music {
     @Override
     public String toString() {
         return pitch.toString() + duration;
-    }
-    
-    public static void testNote() {
-        Note n = new Note(10, new Pitch('C'), Instrument.PIANO);
-        System.out.println("Note is: " + n);
-        Note n = new Note(10, new Pitch('C').transpose(1), Instrument.PIANO);
-        System.out.println("Note is: " + n);
     }
 }
