@@ -204,7 +204,12 @@ public class SequencePlayer {
 
         // create a new player, with 120 beats (i.e. quarter note) per
         // minute, with 2 tick per quarter note
-        player = new SequencePlayer(120, 2);
+        try {
+            player = new SequencePlayer(120, 2);
+        } catch (MidiUnavailableException | InvalidMidiDataException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Bad Midi", e);
+        }
 
         int start = 1;
         for (Pitch p : new Pitch[] {
@@ -230,7 +235,12 @@ public class SequencePlayer {
         System.out.println(player);
 
         // play!
-        player.play();
+        try {
+            player.play();
+        } catch (MidiUnavailableException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Bad Midi", e);
+        }
 
         /*
          * Note: A possible weird behavior of the Java sequencer: Even if the
