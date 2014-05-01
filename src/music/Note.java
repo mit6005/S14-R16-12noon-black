@@ -1,5 +1,4 @@
 package music;
-
 /**
  * Note represents a note played by an instrument. 
  */
