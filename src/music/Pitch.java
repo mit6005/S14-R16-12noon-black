@@ -72,7 +72,8 @@ public class Pitch {
      *   n such that that.transpose(n).equals(this).
      */
     public int difference(Pitch that) {
-        return that.value - this.value;
+        //This is our bug?
+        return this.value- that.value;
     }
     
     @Override
